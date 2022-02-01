@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 8181780659758762698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.643228, y: 0.22805241, z: 4.5476103}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8181780660654724922}
   - {fileID: 8181780660210205461}
@@ -444,7 +444,7 @@ HingeJoint:
   m_Anchor: {x: -0.3, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 8.860547, y: 0.7819956, z: -0.48}
+  m_ConnectedAnchor: {x: -10.165452, y: 2.5005767, z: -0.28835392}
   m_UseSpring: 0
   m_Spring:
     spring: 0

@@ -20,6 +20,8 @@ public class DoorLights : MonoBehaviour
         if(lightsOn == 3)
         {
             isDoorOpen = true;
+
+            print("Door is open");
         }
     }
 
