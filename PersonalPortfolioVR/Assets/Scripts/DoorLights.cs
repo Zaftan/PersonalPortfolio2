@@ -8,11 +8,14 @@ public class DoorLights : MonoBehaviour
 
     [SerializeField] List<GameObject> lights;
     int lightsOn;
-    bool isDoorOpen;
+    [SerializeField] bool isDoorOpen;
+
+    [SerializeField] GameObject door;
+    bool once = false;
 
     private void Start()
     {
-            
+        instance = this;
     }
 
     private void Update()
@@ -23,42 +26,36 @@ public class DoorLights : MonoBehaviour
 
             print("Door is open");
         }
+
+        if (isDoorOpen && !once)
+        {
+            door.transform.Rotate(0, 140, 0);
+            once = true;
+        }
+
+
     }
 
-    public void TurnOnLight()
+    public void TurnOnLight(int id)
     {
-        foreach (GameObject light in lights)
+        if (id < lights.Count)
         {
-            if(light.GetComponent<lightScript>().isOn == false)
-            {
-                light.GetComponent<lightScript>().isOn = true;
-                lightsOn++;
-                break;
-            }
-            else
-            {
-                return;
-            }
+            Debug.Log("turning on light");
+            lights[id].GetComponent<lightScript>().isOn = true;
+            lightsOn++;
         }
     }
 
-    public void TurnOffLight()
+    public void TurnOffLight(int id)
     {
-        if (lights[3].GetComponent<lightScript>().isOn)
+        if (id < lights.Count)
         {
-            lights[3].GetComponent<lightScript>().isOn = false;
-            lightsOn--;
-        } 
-        else if (lights[2].GetComponent<lightScript>().isOn)
-        {
-            lights[2].GetComponent<lightScript>().isOn = false;
+            Debug.Log("turning off light");
+            lights[id].GetComponent<lightScript>().isOn = false;
             lightsOn--;
         }
-        else if (lights[1].GetComponent<lightScript>().isOn)
-        {
-            lights[1].GetComponent<lightScript>().isOn = false;
-            lightsOn--;
-        }
+
+
     }
 
 }

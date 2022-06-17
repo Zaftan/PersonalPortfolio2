@@ -10,11 +10,11 @@ public class lightScript : MonoBehaviour
     {
         if (isOn)
         {
-            gameObject.GetComponent<Light>().enabled = true;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
-            gameObject.GetComponent<Light>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
