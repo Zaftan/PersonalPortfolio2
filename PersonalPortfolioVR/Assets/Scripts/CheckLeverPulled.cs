@@ -51,7 +51,7 @@ public class CheckLeverPulled : MonoBehaviour
         if(currentTime != 0) { StartCoroutine(Timer()); }
         else
         {
-            lever.transform.Rotate(0, -140, 0);
+            lever.transform.Rotate(0, 0, 135);
             currentTime = time;
         }
 
