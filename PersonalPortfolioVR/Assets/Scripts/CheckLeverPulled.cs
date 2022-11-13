@@ -23,10 +23,8 @@ public class CheckLeverPulled : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered");
         if(other.tag == "GrabIgnoreRay")
         {
-            Debug.Log("entered+");
             DoorLights.instance.TurnOnLight(lightID);
             StartCoroutine(Timer());
         }
@@ -35,10 +33,8 @@ public class CheckLeverPulled : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exited");
         if (other.tag == "GrabIgnoreRay")
         {
-            Debug.Log("Exited+");
             DoorLights.instance.TurnOffLight(lightID);
         }
     }
@@ -51,7 +47,7 @@ public class CheckLeverPulled : MonoBehaviour
         if(currentTime != 0) { StartCoroutine(Timer()); }
         else
         {
-            lever.transform.Rotate(0, 0, 135);
+            lever.transform.Rotate(new Vector3(0,0,120));
             currentTime = time;
         }
 
